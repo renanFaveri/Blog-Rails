@@ -15,3 +15,6 @@
 /log/*
 !/log/.keep
 /tmp
+getfile.look
+config/database.vml
+config/secrets.yml
