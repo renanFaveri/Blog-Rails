@@ -13,10 +13,23 @@
 <div class="header clearfix">
 <nav>
 <ul class="nav nav-pills pull-right">
+
 <li role="presentation" class="active"><%= link_to "Home", root_path %></li>
+
 <li role="presentation"><%= link_to "sobre", sobre_path %></a></li>
-<li role="presentation"><a href="#">Contact</a></li>
+
+<% if current_user %> 
+<li role="presentation"><%= link_to "Artigos", posts_path %></li>
+
+<li role="presentation">
+<%= current_user.email %></li> 
+<li> <%= link_to "sair", destroy_user_session_path, method: :delete %> </li> 
+<% else %>
+<li> <%= link_to "Entrar", new_user_session_path %> </li>
+<% end %>
+
 </ul>
+
 </nav>
 <h3 class="text-muted">Blog de Desenvolvimento</h3>
 </div>
